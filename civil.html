@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIVIL Books</title>
+    <link rel="stylesheet" href="civil_style.css">
+</head>
+<body>
+    <header>
+        <h1>Civil Engineering Book Catalogue</h1>
+        <p>Essential textbooks and references for every CIVIL learner</p>
+    </header>
+    <main>
+        <div class="toolbar">
+            <input type="text" placeholder="Search books...">
+            <select>
+                <option value="">All Categories</option>
+                <option value="circuits">Structural Engineering & Materials</option>
+                <option value="electronics"> Geotechnical & Foundation Engineering</option>
+                <option value="power">Fluid Mechanics & Water Resources</option>
+                <option value="power">Transportation & Surveying</option>
+            </select>
+        </div>
+        <section class="catalogue" id="catalogue">
+            <article class="book" data-category="Structural Engineering & Materials">
+                <div class="book-cover">
+                    <img src="IMAGES/Strength of Materials.jpg" alt="Strength of Materials">
+                    <span>Strength of Materials</span>
+                </div>
+                <div class="book-info">
+                    <span class="category">Structural Engineering & Materials</span>
+                    <h2>Strength of Materials</h2>
+                    <p><strong>Dr. B.C. Punmia, Ashok Kumar Jain & Arun Kumar Jain</strong></p>
+                    <p class="book-price">Price Range: ₹650 to ₹750</p>
+                    <p>Structural fundamentals, shear force/bending moment diagrams, and stress analysis</p>
+                    <button class="book-btn">Add to Cart</button>
+                </div>
+            </article>
+            <article class="book" data-category="Geotechnical & Foundation Engineering">
+                <div class="book-cover">
+                    <img src="IMAGES/Basic and Applied Soil Mechanics.jpg" alt="Basic and Applied Soil Mechanics">
+                    <span>Basic and Applied Soil Mechanics</span>
+                </div>
+                <div class="book-info">
+                    <span class="category">Geotechnical & Foundation Engineering</span>
+                    <h2>Basic and Applied Soil Mechanics</h2>
+                    <p><strong>Gopal Ranjan & A.S.R. Rao</strong></p>
+                    <p class="book-price">Price Range:  ₹520 to ₹650 </p>
+                    <p>Foundation designs, soil compaction, and shear strength theories.</p>
+                    <button class="book-btn">Add to Cart</button>
+                </div>
+            </article>
+            <article class="book" data-category="Fluid Mechanics & Water Resources">
+                <div class="book-cover">
+                    <img src="IMAGES/Irrigation and Water Power Engineering.jpg" alt="Irrigation and Water Power Engineering">
+                    <span>Irrigation and Water Power Engineering</span>
+                </div>
+                <div class="book-info">
+                    <span class="category">Fluid Mechanics & Water Resources</span>
+                    <h2>Irrigation and Water Power Engineering</h2>
+                    <p><strong>Dr. B.C. Punmia & Dr. Pande B.B. Lal</strong></p>
+                    <p class="book-price">Price Range: ₹750 to ₹850</p>
+                    <p>Hydrology, dam design, spillways, and canals.</p>
+                    <button class="book-btn">Add to Cart</button>
+                </div>
+            </article>
+            <article class="book" data-category="Transportation & Surveying">
+                <div class="book-cover">
+                    <img src="IMAGES/Highway Engineering.jpg" alt="Highway Engineering">
+                    <span>Highway Engineering</span>
+                </div>
+                <div class="book-info">
+                    <span class="category">Transportation & Surveying</span>
+                    <h2>Highway Engineering</h2>
+                    <p><strong>S.K. Khanna & C.E.G. Justo</strong></p>
+                    <p class="book-price">Price Range: ₹480 to ₹550</p>
+                    <p>Comprehensive coverage of highway design, construction, and maintenance.</p>
+                    <button class="book-btn">Add to Cart</button>
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

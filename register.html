@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="register_style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="left-container">
+            <h1 >Register Page</h1>
+        </div>
+        <div class="right-container">
+            <form action="/register" method="POST" class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br><br>
+
+                <label for="phone-number">Phone Number:</label>
+                <input type="tel" id="phone-number" name="phone number" required><br><br>
+
+                <label>Sex:</label>
+                <input type="radio" id="male" name="sex" value="male" required>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="sex" value="female" required>
+                <label for="female">Female</label>
+                <input type="radio" id="other" name="sex" value="other" required>
+                <label for="other">Other</label><br><br>
+
+                <label for="birthday">Choose a date:</label>
+                <input type="date" id="birthday" name="birthday">
+                <br><br>
+                <label>Language known:</label>
+                <input type="checkbox" id="english" name="language" value="english">
+                <label for="english">English</label>
+                <input type="checkbox" id="telugu" name="language" value="telugu">
+                <label for="telugu">Telugu</label>
+                <input type="checkbox" id="hindi" name="language" value="hindi">
+                <label for="hindi">Hindi</label>
+                <input type="checkbox" id="tamil" name="language" value="tamil">
+                <label for="tamil">Tamil</label><br><br>
+
+                <label for="address">Address:</label><br>
+                <textarea id="address" name="address" rows="4" cols="50" required></textarea><br><br>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>    
+    <script>
+        const registrationForm = document.querySelector(".form-group");
+        const usernameInput = document.getElementById("username");
+        const emailInput = document.getElementById("email");
+        const passwordInput = document.getElementById("password");
+        const phoneInput = document.getElementById("phone-number");
+
+        registrationForm.addEventListener("submit", (event) => {
+            const validUsername = /^[A-Za-z]{6,}$/.test(usernameInput.value);
+            const validEmail = /^[0-9]+@glbitm\.ac\.in$/.test(emailInput.value);
+            const validPassword = passwordInput.value.length >= 6;
+            const validPhone = /^[0-9]{10}$/.test(phoneInput.value);
+
+            usernameInput.setCustomValidity(
+                validUsername ? "" : alert("Name should contain alphabets only and have at least 6 letters.")
+            );
+            emailInput.setCustomValidity(
+                validEmail ? "" : "Email must use your admission number followed by @glbitm.ac.in."
+            );
+            passwordInput.setCustomValidity(
+                validPassword ? "" : "Password must be at least 6 characters long."
+            );
+            phoneInput.setCustomValidity(
+                validPhone ? "" : alert("Phone number must contain exactly 10 digits.")
+            );
+
+            if (!registrationForm.reportValidity()) {
+                event.preventDefault();
+            }
+        });
+
+        [usernameInput, emailInput, passwordInput, phoneInput].forEach((input) => {
+            input.addEventListener("input", () => input.setCustomValidity(""));
+        });
+    </script>
+</body>
+</html>
